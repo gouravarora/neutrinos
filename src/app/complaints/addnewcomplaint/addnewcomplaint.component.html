@@ -1,0 +1,15 @@
+
+<div class="form-container">
+  <form [formGroup]="compliant">
+      <mat-form-field class="title">
+          <input matInput placeholder="Title" formControlName="title">
+        </mat-form-field>  
+
+        <mat-form-field class="discription">
+            <textarea matInput placeholder="Discription" formControlName="discription"></textarea>
+          </mat-form-field>
+
+          <button mat-button (click)="addComplaint()">Raise Compliant</button>
+
+  </form>
+</div>

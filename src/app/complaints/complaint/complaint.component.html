@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>{{complaint.title}}</h2>
+  <h3>{{complaint.discription}}</h3>
+  <div class="comments">
+    <div class="row" *ngFor="let comment of complaint.comments; let i = index">
+      <div>
+        {{comment.createdBy?.email}}
+      </div>
+      <div>
+        {{comment.comment}}
+      </div>
+    </div>
+
+    <div class="do-comment">
+      <form [formGroup]="comment">
+        <mat-form-field class="comment">
+          <textarea matInput placeholder="Leave a comment" formControlName="comment"></textarea>
+        </mat-form-field>
+        <button mat-button (click)="addComment()" >Add comment</button>
+      </form>
+    </div>
+  </div>
+</div>

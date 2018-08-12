@@ -1,0 +1,33 @@
+<div>
+  <mat-card>
+    <mat-card-header>Login</mat-card-header>
+    <form class="login-form" [formGroup]="login">
+      <mat-form-field class="login-username">
+        <input matInput placeholder="Username" formControlName="username">
+      </mat-form-field>
+
+      <mat-form-field type="password" class="login-password">
+        <input matInput type="password" placeholder="Password" formControlName="password">
+      </mat-form-field>
+      <button mat-button (click)="login.valid && doLogin()">Login</button>
+    </form>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-header>Register</mat-card-header>
+    <form class="register-form" [formGroup]="register">
+      <mat-form-field class="register-username">
+        <input matInput placeholder="Username" formControlName="username">
+      </mat-form-field>
+
+      <mat-form-field type="password" class="login-password">
+        <input matInput placeholder="Email" formControlName="email">
+      </mat-form-field>
+
+      <mat-form-field type="password" class="login-password">
+        <input matInput type="password" placeholder="Password" formControlName="password">
+      </mat-form-field>
+      <button mat-button (click)="register.valid && doRegister()">Register</button>
+    </form>
+  </mat-card>
+</div>

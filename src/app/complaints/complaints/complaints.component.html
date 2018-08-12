@@ -1,0 +1,46 @@
+
+<button mat-button (click)="addComplaint()" *ngIf="userType == 'customer'">
+  Add Complaint
+</button>
+<div class="complaints-table">
+  <div class="row">
+    <div class="cell">
+      Heading
+    </div>
+    <div class="cell">
+      Date Created
+    </div>
+    <div class="cell">
+      Date Updated
+    </div>
+    <div class="cell">
+      Status
+    </div>
+    <div class="cell" *ngIf="userType == 'agent'">
+      Created By
+    </div>
+  </div>
+  <div class="row" *ngIf="noComplaints">
+    No complaints
+  </div>
+  <div class="row" *ngFor="let complaint of complaints; let i =index" (click)="onClickComplaint(complaint)">
+
+    <div class="cell">
+      {{complaint.title}}
+    </div>
+    <div class="cell">
+      {{complaint.createdAt}}
+    </div>
+    <div class="cell">
+      {{complaint.updatedAt}}
+    </div>
+    <div class="cell">
+      {{complaint.status}}
+    </div>
+    <div class="cell" *ngIf="userType == 'agent'">
+      {{complaint.createdBy?.email}}
+    </div>
+
+  </div>
+
+</div>
